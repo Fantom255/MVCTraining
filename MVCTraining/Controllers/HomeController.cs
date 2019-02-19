@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCTraining.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,17 @@ namespace MVCTraining.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult ViewCustomer()
+        {
+            Customer customer = new Customer();
+
+            customer.Id = Guid.NewGuid().ToString();
+            customer.Name = "Joe";
+            customer.Telephone = "123123123";
+
+            return View(customer);
         }
     }
 }
